@@ -19,3 +19,9 @@ def error(msg):
 def get_status():
     """get the node status and return data"""
     return data({})
+
+
+def run_server():
+    from threading import Thread
+    thread = Thread(target=app.run, kwargs={'port': 5000, 'host': '0.0.0.0'})
+    thread.start()
